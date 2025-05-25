@@ -155,12 +155,12 @@
     <div class="container mx-auto text-center">
       <h2 class="text-3xl font-bold mb-6">Liên hệ với chúng tôi (Điện thoại và Zalo: [+84]972924526)</h2>
       <p class="text-lg mb-6">Hãy để chúng tôi giúp bạn tối ưu hóa sản phẩm với công nghệ VSR tiên tiến.</p>
-      <div class="max-w-md mx-auto">
-        <input type="text" placeholder="Họ và tên" class="w-full p-3 mb-4 rounded-lg">
-        <input type="email" placeholder="Email" class="w-full p-3 mb-4 rounded-lg">
-        <textarea placeholder="Tin nhắn" class="w-full p-3 mb-4 rounded-lg" rows="4"></textarea>
-        <button class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Gửi</button>
-      </div>
+      <form action="https://formspree.io/f/xdoyzlqr" method="POST" class="max-w-md mx-auto">
+        <input type="text" name="name" placeholder="Họ và tên" class="w-full p-3 mb-4 rounded-lg" required>
+        <input type="email" name="email" placeholder="Email" class="w-full p-3 mb-4 rounded-lg" required>
+        <textarea name="message" placeholder="Tin nhắn" class="w-full p-3 mb-4 rounded-lg" rows="4" required></textarea>
+        <button type="submit" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">GỬI</button>
+      </form>
     </div>
   </section>
 
