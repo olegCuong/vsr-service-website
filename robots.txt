@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://olegcuong.github.io/vsr-service-website/sitemap.xml
