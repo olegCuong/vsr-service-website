@@ -42,8 +42,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khử Ứng Suất Dư (VSR) - Công nghệ Xanh</title>
-  <meta name="description" content="Dịch vụ Vibratory Stress Relief (VSR) chuyên nghiệp, giúp khử ứng suất dư, tăng độ bền và chất lượng sản phẩm.">
+  <title id="page-title">Dịch vụ Khử Ứng Suất Dư (VSR) & Giải pháp Cơ khí | VSR Việt Nam</title>
+  <meta name="description" content="VSR Việt Nam cung cấp dịch vụ khử ứng suất dư bằng công nghệ Vibratory Stress Relief (VSR), cân bằng động, thử nghiệm rung xóc, mô phỏng số, phân tích modal và hơn thế nữa. Liên hệ để tối ưu hóa sản phẩm của bạn!">
+  <meta name="keywords" content="khử ứng suất dư, Vibratory Stress Relief, VSR Việt Nam, cân bằng động, thử nghiệm rung xóc, mô phỏng số, phân tích modal, công nghệ cơ khí, tối ưu hóa sản xuất">
+  <meta name="author" content="VSR Việt Nam">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -52,137 +54,156 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "VSR Việt Nam",
-    "url": "https://olegcuong.github.io/vsr-service-website",
+    "url": "https://olegcuong.github.io/vsr-service-website/",
+    "logo": "https://olegcuong.github.io/vsr-service-website/assets/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+84972924526",
-      "contactType": "customer service"
-    }
+      "contactType": "customer service",
+      "areaServed": "VN",
+      "availableLanguage": ["vi", "en"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "236 Hoàng Quốc Việt",
+      "addressLocality": "Hà Nội",
+      "addressRegion": "Miền Bắc",
+      "postalCode": "100000",
+      "addressCountry": "VN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/zGrwmdfXi5GsM6C3/?mibextid=qi2Omg",
+      "https://www.researchgate.net/profile/Bui-Manh-Cuong",
+      "https://scholar.google.com/citations?hl=vi&user=9SY6KO0AAAAJ"
+    ]
   }
   </script>
 </head>
 <body class="bg-gray-100 font-sans">
-  <!-- Navigation -->
-  <nav class="bg-blue-800 text-white p-4 sticky top-0 shadow-md">
+  <!-- Navigation Section -->
+  <nav class="bg-blue-800 text-white p-4 sticky top-0 shadow-md z-10">
     <div class="container mx-auto flex justify-between items-center">
       <h1 class="text-2xl font-bold">VSR Việt Nam</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#home" class="hover:text-blue-300">Trang chủ</a></li>
-        <li><a href="#about" class="hover:text-blue-300">Giới thiệu</a></li>
-        <li><a href="#services" class="hover:text-blue-300">Dịch vụ</a></li>
-        <li><a href="#blog" class="hover:text-blue-300">Blog</a></li>
-        <li><a href="#contact" class="hover:text-blue-300">Liên hệ</a></li>
-      </ul>
+      <div class="flex items-center space-x-6">
+        <ul class="flex space-x-6">
+          <li><a href="#home" data-lang-key="nav_home" title="Trang chủ VSR Việt Nam" class="hover:text-blue-300">Trang chủ</a></li>
+          <li><a href="#about" data-lang-key="nav_about" title="Giới thiệu về công nghệ VSR" class="hover:text-blue-300">Giới thiệu</a></li>
+          <li><a href="#services" data-lang-key="nav_services" title="Dịch vụ khoa học công nghệ VSR Việt Nam" class="hover:text-blue-300">Dịch vụ</a></li>
+          <li><a href="#blog" data-lang-key="nav_blog" title="Blog và video về công nghệ VSR" class="hover:text-blue-300">Blog</a></li>
+          <li><a href="#contact" data-lang-key="nav_contact" title="Liên hệ VSR Việt Nam" class="hover:text-blue-300">Liên hệ</a></li>
+        </ul>
+        <button id="lang-toggle" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-400">EN</button>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="bg-blue-600 text-white py-20 text-center">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold mb-4">Rung Khử Ứng Suất Dư (Vibratory Stress Relief - VSR) Công Nghệ Xanh, Sạch</h2>
-      <p class="text-lg mb-6">Tăng độ bền, giảm ứng suất dư, nâng cao chất lượng sản phẩm, tăng tốc sản xuất với công nghệ Vibratory Stress Relief tiên tiến.</p>
-      <a href="#contact" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Liên hệ ngay</a>
+      <h1 data-lang-key="hero_title" class="text-4xl font-bold mb-4">Khử Ứng Suất Dư bằng Công Nghệ Vibratory Stress Relief (VSR)</h1>
+      <p data-lang-key="hero_description" class="text-lg mb-6">Giảm ứng suất dư, làm ổn định hình dáng, kích thước, tăng độ bền, độ chính xác gia công, nâng cao chất lượng sản phẩm với công nghệ VSR tiên tiến, thân thiện môi trường.</p>
+      <a href="#contact" data-lang-key="hero_cta" title="Liên hệ để sử dụng dịch vụ VSR" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Liên hệ ngay</a>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="py-16">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Vibratory Stress Relief (VSR) là gì?</h2>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-        Vibratory Stress Relief (VSR) là phương pháp sử dụng rung động cơ học có kiểm soát để giảm và phân bố lại ứng suất dư trong các cấu kiện kim loại sau khi gia công, hàn hoặc đúc. Công nghệ này giúp tăng độ bền, giảm nguy cơ biến dạng và nứt gãy, đồng thời thân thiện với môi trường so với các phương pháp nhiệt truyền thống.
+      <h2 data-lang-key="about_title" class="text-3xl font-bold mb-6">Vibratory Stress Relief (VSR) là gì?</h2>
+      <p data-lang-key="about_description" class="text-lg text-gray-700 max-w-3xl mx-auto">
+        Vibratory Stress Relief (VSR) là phương pháp sử dụng rung động cơ học có kiểm soát để giảm và phân bố lại ứng suất dư trong các cấu kiện kim loại sau khi gia công hàn hoặc đúc. Công nghệ này làm ổn định hình dáng, kích thước của chi tiết, giúp tăng độ chính xác gia công, tăng độ bền, làm giảm nguy cơ biến dạng và nứt gãy, đồng thời thân thiện với môi trường so với các phương pháp nhiệt truyền thống.
       </p>
-      <img src="assets\images\vsr-image3.jpg" alt="Quy trình Vibratory Stress Relief (VSR) để khử ứng suất dư" class="mt-8 mx-auto rounded-lg shadow-lg max-w-md">
+      <img src="assets/images/vsr-image3.jpg" alt="Quy trình Vibratory Stress Relief (VSR) để khử ứng suất dư trong kim loại" class="mt-8 mx-auto rounded-lg shadow-lg max-w-md">
     </div>
   </section>
 
-        
   <!-- Services Section -->
   <section id="services" class="bg-gray-200 py-16">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Lĩnh vực nghiên cứu và dịch vụ khoa học, công nghệ của chúng tôi</h2>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-      <h3 class="text-lg mb-6 font-semibold text-center">1. Các lĩnh vực nghiên cứu của chúng tôi</h3>
-      <img src="assets/images/Hoc_thuat_CaBM.jpg" alt="Lợi ích của Vibratory Stress Relief (VSR) trong sản xuất" class="mt-6 mx-auto rounded-lg shadow-lg max-w-2xl">
-      <hr class="my-6 border-t-2 border-gray-300 mx-auto w-1/2 rounded-full">
-      <h3 class="text-lg mb-6 font-semibold text-center">2. Các dịch vụ KH&CN của chúng tôi</h3>
+      <h2 data-lang-key="services_title" class="text-3xl font-bold text-center mb-8">Dịch vụ Khoa học & Công nghệ của VSR Việt Nam</h2>
+      <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+        <h3 data-lang-key="services_research_title" class="text-2xl mb-6 font-semibold text-center">1. Các lĩnh vực nghiên cứu của chúng tôi</h3>
+        <img src="assets/images/Hoc_thuat_CaBM.jpg" alt="Nghiên cứu ứng suất dư và công nghệ Vibratory Stress Relief (VSR)" class="mt-6 mx-auto rounded-lg shadow-lg max-w-2xl">
+        <hr class="my-6 border-t-2 border-gray-300 mx-auto w-1/2 rounded-full">
+        <h3 data-lang-key="services_tech_title" class="text-2xl mb-6 font-semibold text-center">2. Các dịch vụ KH&CN của chúng tôi</h3>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Khử ứng suất kim loại</h3>
-          <p>Ứng dụng VSR cho các cấu kiện kim loại lớn, đảm bảo độ bền và độ ổn định cao.</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Tư vấn kỹ thuật</h3>
-          <p>Cung cấp giải pháp tối ưu hóa quy trình sản xuất với công nghệ VSR.</p>
+          <h3 data-lang-key="service_vsr_title" class="text-xl font-semibold mb-4">Khử ứng suất kim loại (VSR)</h3>
+          <p data-lang-key="service_vsr_description">Ứng dụng công nghệ Vibratory Stress Relief (VSR) cho các cấu kiện kim loại lớn, đảm bảo độ bền và độ ổn định cao sau gia công, hàn, đúc.</p>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Kiểm tra và phân tích</h3>
-          <p>Đánh giá ứng suất dư trước và sau khi xử lý để đảm bảo chất lượng.</p>
+          <h3 data-lang-key="service_balancing_title" class="text-xl font-semibold mb-4">Cân bằng Rotor, chân vịt, quạt</h3>
+          <p data-lang-key="service_balancing_description">Cân bằng động tại chỗ cho các chi tiết quay như rotor, chân vịt, quạt, giúp máy móc hoạt động êm ái, tăng tuổi thọ và giảm chi phí bảo dưỡng.</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Cân bằng Rotor, chân vịt, quạt...</h3>
-          <p>Chúng tôi giúp bạn cân bằng động cho các chi tiết quay như Rotor, chân vịt, quạt... ngay tại phân xưởng của bạn mà không cần phải tháo chi tiết, giúp máy móc làm việc êm ái, tăng tuổi thọ, giảm chi phí bảo dưỡng.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_vibration_title" class="text-xl font-semibold mb-4">Thử nghiệm rung xóc, shock</h3>
+          <p data-lang-key="service_vibration_description">Thử nghiệm khả năng chịu rung xóc, chịu shock của chi tiết cơ khí, thiết bị, linh kiện điện tử theo tiêu chuẩn quốc tế (MIL-STD-810G, ASTM, ISO).</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Thử nghiệm rung xóc, shock</h3>
-          <p>Chúng tôi giúp bạn thử nghiệm khả năng chịu rung xóc, chịu shock của các chi tiết cơ khí, thiết bị, linh kiện điện tử... theo các tiêu chuẩn MIL-STD-810G, ASTM, ISO, GOST...</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_friction_title" class="text-xl font-semibold mb-4">Thử nghiệm ma sát, mài mòn và bôi trơn</h3>
+          <p data-lang-key="service_friction_description">Xác định hệ số ma sát, khả năng chịu xước của lớp phủ, chống mài mòn, và khả năng bôi trơn của vật liệu theo tiêu chuẩn ASTM, ISO, GOST.</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Thử nghiệm ma sát mài mòn và bôi trơn</h3>
-          <p>Chúng tôi giúp bạn xác định hệ số ma sát, thử nghiệm khả năng chịu xước của lớp phủ, lớp mạ, khả năng chống mài mòn, khả năng bôi trơn của các vật liệu theo các tiêu chuẩn ASTM, ISO, GOST...</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_simulation_title" class="text-xl font-semibold mb-4">Mô phỏng số các quá trình công nghệ</h3>
+          <p data-lang-key="service_simulation_description">Mô phỏng số các quá trình phức tạp như hàn, phun bi, phay, tiện, nổ, in 3D trên các phần mềm FEM tiên tiến (ANSYS, LS-DYNA).</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Mô phỏng số các quá trình công nghệ</h3>
-          <p>Chúng tôi giúp bạn mô phỏng số các quá trình công nghệ phức tạp như hàn, phun bi, phay, tiện, nổ, in3D... trên các phần mềm FEM tiên tiến như ANSYS, LS_DYNA...</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_modal_title" class="text-xl font-semibold mb-4">Phân tích modal thực nghiệm</h3>
+          <p data-lang-key="service_modal_description">Xác định tần số, dạng dao động riêng và hệ số giảm chấn bằng thực nghiệm, làm cơ sở tối ưu hóa thiết kế sản phẩm cơ khí.</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Phân tích modal thực nghiệm</h3>
-          <p>Chúng tôi giúp bạn xác định tần số dao động riêng, dạng dao động riêng, hệ số giảm chấn bằng thực nghiệm cho các chi tiết, kết cấu cơ khí, máy móc là cơ sở để các bạn cải tiến, tối ưu hoá thiết kế sản phẩm của bạn</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_vibration_analysis_title" class="text-xl font-semibold mb-4">Đo rung, ồn, biến dạng và phân tích tuổi thọ mỏi</h3>
+          <p data-lang-key="service_vibration_analysis_description">Đo lường mức độ ồn, rung động, biến dạng động của chi tiết trong quá trình làm việc, phân tích và đánh giá tuổi thọ mỏi.</p>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-4">Đo rung, ồn, biến dạng</h3>
-          <p>Chúng tôi giúp bạn đo mức độ ồn của âm thanh, đo rung động, đo biến dạng động của các chi tiết trong quá trình làm việc, phân tích và đánh giá tuổi thọ mỏi và tuổi thọ mỏi của chúng</p>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="service_consulting_title" class="text-xl font-semibold mb-4">Tư vấn và đào tạo kỹ thuật</h3>
+          <p data-lang-key="service_consulting_description">Cung cấp giải pháp tối ưu hóa quy trình sản xuất và đào tạo chuyên sâu về công nghệ VSR cùng các lĩnh vực liên quan.</p>
         </div>
       </div>
     </div>
   </section>
-  
 
   <!-- Blog Section -->
   <section id="blog" class="py-16">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Blog & Video</h2>
+      <h2 data-lang-key="blog_title" class="text-3xl font-bold text-center mb-8">Blog & Video về Công nghệ VSR</h2>
       <div id="blog-posts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Các đối tác chúng tôi đã phục vụ và Lợi ích của VSR trong sản xuất</h3>
-          <img src="assets/images/vsr-image2.JPG" alt="Lợi ích của Vibratory Stress Relief (VSR) trong sản xuất" class="w-full h-48 object-cover mb-4 rounded">
-          <p class="text-gray-700">Tìm hiểu cách VSR giúp giảm ứng suất dư và tăng độ bền cho sản phẩm kim loại.</p>
-          <a href="#" class="text-blue-600 hover:underline">Đọc thêm</a>
+          <h3 data-lang-key="blog_video1_title" class="text-xl font-semibold mb-2">Video: VSR thay thế lò ủ nhiệt kích thước lớn</h3>
+          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/FNCyV9NZSoc" frameborder="0" allowfullscreen title="VSR thay thế ủ nhiệt và già hóa tự nhiên"></iframe>
+          <p data-lang-key="blog_video1_description" class="text-gray-700">Tìm hiểu lý do VSR là giải pháp thay thế hiệu quả, thân thiện môi trường so với ủ nhiệt.</p>
+          <a href="/blog/vsr-thay-the-u-nhiet" data-lang-key="blog_read_more" title="Đọc thêm về VSR thay thế ủ nhiệt" class="text-blue-600 hover:underline">Đọc thêm</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Video: Bản chất phương pháp VSR</h3>
-          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/rvrfGAoTBv4" frameborder="0" allowfullscreen></iframe>
-          <p class="text-gray-700">Tìm hiểu bản chất khoa học và cơ chế của phương pháp Vibratory Stress Relief (VSR).</p>
-          <a href="#" class="text-blue-600 hover:underline">Đọc thêm</a>
+          <h3 data-lang-key="blog_partners_title" class="text-xl font-semibold mb-2">Đối tác của chúng tôi đã sử dụng VSR trong sản xuất</h3>
+          <img src="assets/images/vsr-image2.JPG" alt="Lợi ích của Vibratory Stress Relief (VSR) trong sản xuất kim loại" class="w-full h-48 object-cover mb-4 rounded">
+          <p data-lang-key="blog_partners_description" class="text-gray-700">Khám phá cách VSR giúp giảm ứng suất dư, tăng độ bền và tối ưu hóa sản xuất cho các sản phẩm kim loại.</p>
+          <a href="/blog/loi-ich-vsr" data-lang-key="blog_read_more" title="Đọc thêm về lợi ích của VSR" class="text-blue-600 hover:underline">Đọc thêm</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Video: Tác hại của ứng suất dư và quy trình VSR thực tế</h3>
-          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/GFXo419VeDQ" frameborder="0" allowfullscreen></iframe>
-          <p class="text-gray-700">Xem quy trình VSR được thực hiện trên một cấu kiện kim loại lớn.</p>
-          <a href="#" class="text-blue-600 hover:underline">Đọc thêm</a>
+          <h3 data-lang-key="blog_video2_title" class="text-xl font-semibold mb-2">Video: Bản chất phương pháp VSR</h3>
+          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/rvrfGAoTBv4" frameborder="0" allowfullscreen title="Bản chất của công nghệ Vibratory Stress Relief (VSR)"></iframe>
+          <p data-lang-key="blog_video2_description" class="text-gray-700">Tìm hiểu cơ chế khoa học và cách hoạt động của phương pháp Vibratory Stress Relief (VSR).</p>
+          <a href="/blog/ban-chat-vsr" data-lang-key="blog_read_more" title="Đọc thêm về bản chất VSR" class="text-blue-600 hover:underline">Đọc thêm</a>
         </div>
         <div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Video: Các kết quả nghiên cứu mới</h3>
-          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/ro4Hyz4Cyss" frameborder="0" allowfullscreen></iframe>
-          <p class="text-gray-700">Khám phá những phát hiện mới nhất từ các nghiên cứu về công nghệ VSR.</p>
-          <a href="#" class="text-blue-600 hover:underline">Đọc thêm</a>
+          <h3 data-lang-key="blog_video3_title" class="text-xl font-semibold mb-2">Video: Tác hại của ứng suất dư</h3>
+          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/GFXo419VeDQ" frameborder="0" allowfullscreen title="Tác hại của ứng suất dư và quy trình VSR"></iframe>
+          <p data-lang-key="blog_video3_description" class="text-gray-700">Xem quy trình VSR thực tế trên cấu kiện kim loại lớn, minh họa tác hại của ứng suất dư.</p>
+          <a href="/blog/tac-hai-ung-suat-du" data-lang-key="blog_read_more" title="Đọc thêm về tác hại ứng suất dư" class="text-blue-600 hover:underline">Đọc thêm</a>
         </div>
-	<div class="bg-white p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold mb-2">Video: Thay thế hoàn hảo phương pháp ủ nhiệt truyền thống hoặc già hoá tự nhiên</h3>
-          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/FNCyV9NZSoc" frameborder="0" allowfullscreen></iframe>
-          <p class="text-gray-700">Khám phá những phát hiện mới nhất từ các nghiên cứu về công nghệ VSR.</p>
-          <a href="#" class="text-blue-600 hover:underline">Đọc thêm</a>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="blog_video4_title" class="text-xl font-semibold mb-2">Video: Nghiên cứu mới về VSR</h3>
+          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/ro4Hyz4Cyss" frameborder="0" allowfullscreen title="Nghiên cứu mới về công nghệ VSR"></iframe>
+          <p data-lang-key="blog_video4_description" class="text-gray-700">Khám phá những phát hiện mới nhất từ các nghiên cứu về công nghệ VSR và ứng dụng thực tiễn.</p>
+          <a href="/blog/nghien-cuu-vsr" data-lang-key="blog_read_more" title="Đọc thêm về nghiên cứu VSR" class="text-blue-600 hover:underline">Đọc thêm</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 data-lang-key="blog_video5_title" class="text-xl font-semibold mb-2">Video: VSR thay thế ủ nhiệt</h3>
+          <iframe class="w-full h-48 mb-4" src="https://www.youtube.com/embed/FNCyV9NZSoc" frameborder="0" allowfullscreen title="VSR thay thế ủ nhiệt và già hóa tự nhiên"></iframe>
+          <p data-lang-key="blog_video5_description" class="text-gray-700">Tìm hiểu lý do VSR là giải pháp thay thế hiệu quả, thân thiện môi trường so với ủ nhiệt.</p>
+          <a href="/blog/vsr-thay-the-u-nhiet" data-lang-key="blog_read_more" title="Đọc thêm về VSR thay thế ủ nhiệt" class="text-blue-600 hover:underline">Đọc thêm</a>
         </div>
       </div>
     </div>
@@ -191,38 +212,225 @@
   <!-- Contact Section -->
   <section id="contact" class="bg-blue-800 text-white py-16">
     <div class="container mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">Liên hệ với chúng tôi (Điện thoại và Zalo: [+84]972924526)</h2>
-      <p class="text-lg mb-6">Hãy để chúng tôi giúp bạn tối ưu hóa sản phẩm với công nghệ VSR tiên tiến.</p>
-      <form action="https://formspree.io/f/xdoyzlqr" method="POST" class="max-w-md mx-auto">
-        <input type="text" name="name" placeholder="Họ và tên" class="w-full p-3 mb-4 rounded-lg" required>
-        <input type="email" name="email" placeholder="Email" class="w-full p-3 mb-4 rounded-lg" required>
-        <textarea name="message" placeholder="Tin nhắn" class="w-full p-3 mb-4 rounded-lg" rows="4" required></textarea>
-        <button type="submit" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">GỬI</button>
-      </form>
+      <h2 data-lang-key="contact_title" class="text-3xl font-bold mb-6">Liên hệ VSR Việt Nam (Điện thoại/Zalo: +84972924526)</h2>
+      <p data-lang-key="contact_description" class="text-lg mb-6">Tối ưu hóa sản phẩm và quy trình sản xuất với công nghệ VSR và các giải pháp kỹ thuật tiên tiến.</p>
+      <div class="flex flex-col md:flex-row justify-center items-center gap-8 max-w-3xl mx-auto">
+        <form action="https://formspree.io/f/xdoyzlqr" method="POST" class="w-full md:w-1/2">
+          <input type="text" name="name" data-lang-key="contact_name_placeholder" placeholder="Họ và tên" class="w-full p-3 mb-4 rounded-lg text-gray-800" required>
+          <input type="email" name="email" data-lang-key="contact_email_placeholder" placeholder="Email" class="w-full p-3 mb-4 rounded-lg text-gray-800" required>
+          <textarea name="message" data-lang-key="contact_message_placeholder" placeholder="Tin nhắn của bạn" class="w-full p-3 mb-4 rounded-lg text-gray-800" rows="4" required></textarea>
+          <button type="submit" data-lang-key="contact_submit" title="Gửi tin nhắn đến VSR Việt Nam" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">GỬI TIN NHẮN</button>
+        </form>
+        <div class="w-full md:w-1/2 flex flex-col items-center">
+          <h3 data-lang-key="contact_zalo_title" class="text-xl font-semibold mb-4">Kết nối qua Zalo</h3>
+          <img src="assets/images/qr-code.jpg" alt="Mã QR Zalo để liên hệ VSR Việt Nam" class="w-48 h-48 object-contain rounded-lg shadow-md mb-4">
+          <p data-lang-key="contact_zalo_description" class="text-sm">Quét mã QR để liên hệ nhanh qua Zalo</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer class="bg-gray-900 text-white py-6">
     <div class="container mx-auto text-center">
-      <p class="mb-4">© 2025 VSR Việt Nam. All rights reserved.</p>
+      <p data-lang-key="footer_copyright" class="mb-4">© 2025 VSR Việt Nam. Đã đăng ký bản quyền.</p>
       <div class="flex justify-center space-x-4">
-        <a href="https://www.facebook.com/share/zGrwmdfXi5GsM6C3/?mibextid=qi2Omg" target="_blank" class="text-white hover:text-blue-300">
+        <a href="https://www.facebook.com/share/zGrwmdfXi5GsM6C3/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Facebook của VSR Việt Nam">
           <i class="fab fa-facebook-f text-xl"></i>
         </a>
-        <a href="https://www.researchgate.net/profile/Bui-Manh-Cuong" target="_blank" class="text-white hover:text-blue-300">
+        <a href="https://www.researchgate.net/profile/Bui-Manh-Cuong" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="ResearchGate của Bùi Mạnh Cường">
           <i class="fas fa-user text-xl"></i>
         </a>
-        <a href="https://scholar.google.com/citations?hl=vi&user=9SY6KO0AAAAJ" target="_blank" class="text-white hover:text-blue-300">
+        <a href="https://scholar.google.com/citations?hl=vi&user=9SY6KO0AAAAJ" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Google Scholar của Bùi Mạnh Cường">
           <i class="fas fa-graduation-cap text-xl"></i>
         </a>
-        <a href="https://fme.lqdtu.edu.vn/staff/655" target="_blank" class="text-white hover:text-blue-300">
+        <a href="https://fme.lqdtu.edu.vn/staff/655" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Thông tin giảng viên trên website Đại học Lê Quy Đôn">
           <i class="fas fa-university text-xl"></i>
         </a>
       </div>
     </div>
   </footer>
 
-  <script src="js/scripts.js"></script>
+  <!-- Script Section -->
+  <script>
+    // Language translations
+    const translations = {
+      vi: {
+        page_title: "Dịch vụ Khử Ứng Suất Dư (VSR) & Giải pháp Cơ khí | VSR Việt Nam",
+        nav_home: "Trang chủ",
+        nav_about: "Giới thiệu",
+        nav_services: "Dịch vụ",
+        nav_blog: "Blog",
+        nav_contact: "Liên hệ",
+        hero_title: "Khử Ứng Suất Dư bằng Công Nghệ Vibratory Stress Relief (VSR)",
+        hero_description: "Giảm ứng suất dư, làm ổn định hình dáng, kích thước, tăng độ bền, độ chính xác gia công, nâng cao chất lượng sản phẩm với công nghệ VSR tiên tiến, thân thiện môi trường.",
+        hero_cta: "Liên hệ ngay",
+        about_title: "Vibratory Stress Relief (VSR) là gì?",
+        about_description: "Vibratory Stress Relief (VSR) là phương pháp sử dụng rung động cơ học có kiểm soát để giảm và phân bố lại ứng suất dư trong các cấu kiện kim loại sau khi gia công hàn hoặc đúc. Công nghệ này làm ổn định hình dáng, kích thước của chi tiết, giúp tăng độ chính xác gia công, tăng độ bền, làm giảm nguy cơ biến dạng và nứt gãy, đồng thời thân thiện với môi trường so với các phương pháp nhiệt truyền thống.",
+        services_title: "Lĩnh vực nghiên cứu và dịch vụ Khoa học, Công nghệ của VSR Việt Nam",
+        services_research_title: "1. Các lĩnh vực nghiên cứu của chúng tôi",
+        services_tech_title: "2. Các dịch vụ KH&CN của chúng tôi",
+        service_vsr_title: "Khử ứng suất kim loại (VSR)",
+        service_vsr_description: "Ứng dụng công nghệ Vibratory Stress Relief (VSR) cho các cấu kiện kim loại lớn, đảm bảo độ bền và độ ổn định cao sau gia công, hàn, đúc.",
+        service_balancing_title: "Cân bằng Rotor, chân vịt, quạt",
+        service_balancing_description: "Cân bằng động tại chỗ cho các chi tiết quay như rotor, chân vịt, quạt, giúp máy móc hoạt động êm ái, tăng tuổi thọ và giảm chi phí bảo dưỡng.",
+        service_vibration_title: "Thử nghiệm rung xóc, shock",
+        service_vibration_description: "Thử nghiệm khả năng chịu rung xóc, chịu shock của chi tiết cơ khí, thiết bị, linh kiện điện tử theo tiêu chuẩn quốc tế (MIL-STD-810G, ASTM, ISO).",
+        service_friction_title: "Thử nghiệm ma sát, mài mòn và bôi trơn",
+        service_friction_description: "Xác định hệ số ma sát, khả năng chịu xước của lớp phủ, chống mài mòn, và khả năng bôi trơn của vật liệu theo tiêu chuẩn ASTM, ISO, GOST.",
+        service_simulation_title: "Mô phỏng số các quá trình công nghệ",
+        service_simulation_description: "Mô phỏng số các quá trình phức tạp như hàn, phun bi, phay, tiện, nổ, in 3D trên các phần mềm FEM tiên tiến (ANSYS, LS-DYNA).",
+        service_modal_title: "Phân tích modal thực nghiệm",
+        service_modal_description: "Xác định tần số, dạng dao động riêng và hệ số giảm chấn bằng thực nghiệm, làm cơ sở tối ưu hóa thiết kế sản phẩm cơ khí.",
+        service_vibration_analysis_title: "Đo rung, ồn, biến dạng và phân tích tuổi thọ mỏi",
+        service_vibration_analysis_description: "Đo lường mức độ ồn, rung động, biến dạng động của chi tiết trong quá trình làm việc, phân tích và đánh giá tuổi thọ mỏi.",
+        service_consulting_title: "Tư vấn và đào tạo kỹ thuật",
+        service_consulting_description: "Cung cấp giải pháp tối ưu hóa quy trình sản xuất và đào tạo chuyên sâu về công nghệ VSR cùng các lĩnh vực liên quan.",
+        blog_title: "Blog & Video về Công nghệ VSR",
+        blog_video1_title: "Video: VSR thay thế lò ủ nhiệt kích thước lớn",
+        blog_video1_description: "Tìm hiểu lý do VSR là giải pháp thay thế hiệu quả, thân thiện môi trường so với ủ nhiệt.",
+        blog_partners_title: "Đối tác của chúng tôi đã sử dụng VSR trong sản xuất",
+        blog_partners_description: "Khám phá cách VSR giúp giảm ứng suất dư, tăng độ bền và tối ưu hóa sản xuất cho các sản phẩm kim loại.",
+        blog_video2_title: "Video: Bản chất phương pháp VSR",
+        blog_video2_description: "Tìm hiểu cơ chế khoa học và cách hoạt động của phương pháp Vibratory Stress Relief (VSR).",
+        blog_video3_title: "Video: Tác hại của ứng suất dư",
+        blog_video3_description: "Xem quy trình VSR thực tế trên cấu kiện kim loại lớn, minh họa tác hại của ứng suất dư.",
+        blog_video4_title: "Video: Nghiên cứu mới về VSR",
+        blog_video4_description: "Khám phá những phát hiện mới nhất từ các nghiên cứu về công nghệ VSR và ứng dụng thực tiễn.",
+        blog_video5_title: "Video: VSR thay thế ủ nhiệt",
+        blog_video5_description: "Tìm hiểu lý do VSR là giải pháp thay thế hiệu quả, thân thiện môi trường so với ủ nhiệt.",
+        blog_read_more: "Đọc thêm",
+        contact_title: "Liên hệ VSR Việt Nam (Điện thoại/Zalo: +84972924526)",
+        contact_description: "Tối ưu hóa sản phẩm và quy trình sản xuất với công nghệ VSR và các giải pháp kỹ thuật tiên tiến.",
+        contact_name_placeholder: "Họ và tên",
+        contact_email_placeholder: "Email",
+        contact_message_placeholder: "Tin nhắn của bạn",
+        contact_submit: "GỬI TIN NHẮN",
+        contact_zalo_title: "Kết nối qua Zalo",
+        contact_zalo_description: "Quét mã QR để liên hệ nhanh qua Zalo",
+        footer_copyright: "© 2025 VSR Việt Nam. Đã đăng ký bản quyền."
+      },
+      en: {
+        page_title: "Vibratory Stress Relief (VSR) Services & Mechanical Solutions | VSR Vietnam",
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_blog: "Blog",
+        nav_contact: "Contact",
+        hero_title: "Residual Stress Relief with Vibratory Stress Relief (VSR) Technology",
+        hero_description: "Reduce residual stress, stabilize shape and dimensions, enhance durability, machining accuracy, and improve product quality with advanced, eco-friendly VSR technology.",
+        hero_cta: "Contact Now",
+        about_title: "What is Vibratory Stress Relief (VSR)?",
+        about_description: "Vibratory Stress Relief (VSR) is a method that uses controlled mechanical vibrations to reduce and redistribute residual stress in metal components after welding or casting. This technology stabilizes the shape and dimensions of parts, enhances machining accuracy, increases durability, reduces the risk of deformation and cracking, and is environmentally friendly compared to traditional thermal methods.",
+        services_title: "Science & Technology Services of VSR Vietnam",
+        services_research_title: "1. Our Research Fields",
+        services_tech_title: "2. Our Science & Technology Services",
+        service_vsr_title: "Metal Stress Relief (VSR)",
+        service_vsr_description: "Applying Vibratory Stress Relief (VSR) technology to large metal components, ensuring high durability and stability after machining, welding, or casting.",
+        service_balancing_title: "Rotor, Propeller, and Fan Balancing",
+        service_balancing_description: "On-site dynamic balancing for rotating components such as rotors, propellers, and fans, ensuring smooth operation, extended lifespan, and reduced maintenance costs.",
+        service_vibration_title: "Vibration and Shock Testing",
+        service_vibration_description: "Testing the vibration and shock resistance of mechanical components, equipment, and electronic parts according to international standards (MIL-STD-810G, ASTM, ISO).",
+        service_friction_title: "Friction, Wear, and Lubrication Testing",
+        service_friction_description: "Determining the coefficient of friction, scratch resistance of coatings, wear resistance, and lubrication properties of materials per ASTM, ISO, and GOST standards.",
+        service_simulation_title: "Numerical Simulation of Technological Processes",
+        service_simulation_description: "Numerical simulation of complex processes such as welding, shot peening, milling, turning, blasting, and 3D printing using advanced FEM software (ANSYS, LS-DYNA).",
+        service_modal_title: "Experimental Modal Analysis",
+        service_modal_description: "Determining natural frequencies, mode shapes, and damping ratios through experimentation, serving as the basis for optimizing mechanical product design.",
+        service_vibration_analysis_title: "Vibration, Noise, Deformation Measurement, and Fatigue Life Analysis",
+        service_vibration_analysis_description: "Measuring noise levels, vibrations, and dynamic deformations of components during operation, analyzing and evaluating fatigue life.",
+        service_consulting_title: "Technical Consulting and Training",
+        service_consulting_description: "Providing solutions to optimize production processes and in-depth training on VSR technology and related fields.",
+        blog_title: "Blog & Videos on VSR Technology",
+        blog_video1_title: "Video: VSR as an Alternative to Large-Scale Heat Treatment",
+        blog_video1_description: "Learn why VSR is an effective, eco-friendly alternative to heat treatment.",
+        blog_partners_title: "Our Partners Have Used VSR in Production",
+        blog_partners_description: "Discover how VSR helps reduce residual stress, enhance durability, and optimize production for metal products.",
+        blog_video2_title: "Video: The Essence of the VSR Method",
+        blog_video2_description: "Understand the scientific mechanism and operation of the Vibratory Stress Relief (VSR) method.",
+        blog_video3_title: "Video: The Harmful Effects of Residual Stress",
+        blog_video3_description: "Watch the practical VSR process on large metal components, illustrating the harmful effects of residual stress.",
+        blog_video4_title: "Video: New Research on VSR",
+        blog_video4_description: "Explore the latest findings from research on VSR technology and its practical applications.",
+        blog_video5_title: "Video: VSR as an Alternative to Heat Treatment",
+        blog_video5_description: "Learn why VSR is an effective, eco-friendly alternative to heat treatment.",
+        blog_read_more: "Read More",
+        contact_title: "Contact VSR Vietnam (Phone/Zalo: +84972924526)",
+        contact_description: "Optimize your products and production processes with VSR technology and advanced technical solutions.",
+        contact_name_placeholder: "Full Name",
+        contact_email_placeholder: "Email",
+        contact_message_placeholder: "Your Message",
+        contact_submit: "SEND MESSAGE",
+        contact_zalo_title: "Connect via Zalo",
+        contact_zalo_description: "Scan the QR code to contact us quickly via Zalo",
+        footer_copyright: "© 2025 VSR Vietnam. All rights reserved."
+      }
+    };
+
+    // Language toggle functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const langToggle = document.getElementById('lang-toggle');
+      let currentLang = 'vi';
+
+      // Update content based on language
+      const updateContent = (lang) => {
+        document.querySelectorAll('[data-lang-key]').forEach(element => {
+          const key = element.getAttribute('data-lang-key');
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+            element.placeholder = translations[lang][key];
+          } else {
+            element.textContent = translations[lang][key];
+          }
+        });
+        // Update page title
+        document.getElementById('page-title').textContent = translations[lang].page_title;
+        // Update HTML lang attribute
+        document.documentElement.lang = lang;
+        // Update button text
+        langToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
+      };
+
+      // Toggle language on button click
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'vi' ? 'en' : 'vi';
+        updateContent(currentLang);
+      });
+
+      // Initialize with Vietnamese
+      updateContent('vi');
+    });
+
+    // Existing script for handling Excel/CSV data (unchanged)
+    var gk_isXlsx = false;
+    var gk_xlsxFileLookup = {};
+    var gk_fileData = {};
+    function filledCell(cell) {
+        return cell !== '' && cell != null;
+    }
+    function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                    row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                    headerRowIndex = 0;
+                }
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+    }
+  </script>
 </body>
 </html>
