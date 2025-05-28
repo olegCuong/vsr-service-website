@@ -1,11 +1,11 @@
 <script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
+    var gk_isXlsx = false;
+    var gk_xlsxFileLookup = {};
+    var gk_fileData = {};
+    function filledCell(cell) {
+      return cell !== '' && cell != null;
+    }
+    function loadFileData(filename) {
         if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
             try {
                 var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
@@ -36,8 +36,9 @@
             }
         }
         return gk_fileData[filename] || "";
-        }
-        </script><!DOCTYPE html>
+    }
+</script>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
@@ -234,7 +235,7 @@
   <footer class="bg-gray-900 text-white py-6">
     <div class="container mx-auto text-center">
       <p data-lang-key="footer_copyright" class="mb-4">© 2025 VSR Việt Nam. Đã đăng ký bản quyền.</p>
-            <p data-lang-key="footer_copyright" class="mb-4">Mục đích của trang web này là trình bày và giới thiệu những thành tựu nghiên cứu tiên tiến nhất trong lĩnh vực cơ khí và cơ kỹ thuật.</p>
+  
       <div class="flex justify-center space-x-4">
         <a href="https://www.facebook.com/share/zGrwmdfXi5GsM6C3/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Facebook của VSR Việt Nam">
           <i class="fab fa-facebook-f text-xl"></i>
@@ -309,8 +310,7 @@
         contact_submit: "GỬI TIN NHẮN",
         contact_zalo_title: "Kết nối qua Zalo",
         contact_zalo_description: "Quét mã QR để liên hệ nhanh qua Zalo",
-        footer_copyright: "© 2025 VSR Việt Nam. Đã đăng ký bản quyền.
-                Mục đích của trang web này là trình bày và giới thiệu những thành tựu nghiên cứu tiên tiến nhất trong lĩnh vực cơ khí và cơ kỹ thuật."
+        footer_copyright: "© 2025 VSR Việt Nam. Đã đăng ký bản quyền.! ...\nMục đích của trang web này là trình bày và giới thiệu những thành tựu nghiên cứu tiên tiến nhất trong lĩnh vực cơ khí và cơ kỹ thuật."
       },
       en: {
         page_title: "Vibratory Stress Relief (VSR) Services & Mechanical Solutions | VSR Vietnam",
@@ -365,36 +365,54 @@
         contact_submit: "SEND MESSAGE",
         contact_zalo_title: "Connect via Zalo",
         contact_zalo_description: "Scan the QR code to contact us quickly via Zalo",
-        footer_copyright: "© 2025 VSR Vietnam. All rights reserved.
-                The purpose of this website is to present and introduce the most advanced research achievements in the field of mechanics and mechanical engineering."
+        footer_copyright: "© 2025 VSR Vietnam. All rights reserved.!...\nThe purpose of this website is to present and introduce the most advanced research achievements in the field of mechanics and mechanical engineering."
       }
     };
 
     // Language toggle functionality
     document.addEventListener('DOMContentLoaded', () => {
       const langToggle = document.getElementById('lang-toggle');
+      if (!langToggle) {
+        console.error('Language toggle button not found!');
+        return;
+      }
+
       let currentLang = 'vi';
 
       // Update content based on language
       const updateContent = (lang) => {
-        document.querySelectorAll('[data-lang-key]').forEach(element => {
-          const key = element.getAttribute('data-lang-key');
-          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            element.placeholder = translations[lang][key];
+        try {
+          console.log('Switching to language:', lang);
+          document.querySelectorAll('[data-lang-key]').forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            if (!translations[lang] || !translations[lang][key]) {
+              console.warn(`Translation missing for key "${key}" in language "${lang}"`);
+              return;
+            }
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              element.placeholder = translations[lang][key];
+            } else {
+              element.textContent = translations[lang][key];
+            }
+          });
+
+          const pageTitle = document.getElementById('page-title');
+          if (pageTitle && translations[lang].page_title) {
+            pageTitle.textContent = translations[lang].page_title;
           } else {
-            element.textContent = translations[lang][key];
+            console.warn('Page title element or translation missing');
           }
-        });
-        // Update page title
-        document.getElementById('page-title').textContent = translations[lang].page_title;
-        // Update HTML lang attribute
-        document.documentElement.lang = lang;
-        // Update button text
-        langToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
+
+          document.documentElement.lang = lang;
+          langToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
+        } catch (error) {
+          console.error('Error updating content:', error);
+        }
       };
 
       // Toggle language on button click
       langToggle.addEventListener('click', () => {
+        console.log('Language toggle clicked');
         currentLang = currentLang === 'vi' ? 'en' : 'vi';
         updateContent(currentLang);
       });
@@ -403,7 +421,7 @@
       updateContent('vi');
     });
 
-    // Existing script for handling Excel/CSV data (unchanged)
+    // Existing script for handling Excel/CSV data
     var gk_isXlsx = false;
     var gk_xlsxFileLookup = {};
     var gk_fileData = {};
