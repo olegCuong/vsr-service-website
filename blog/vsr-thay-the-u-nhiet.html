@@ -1,0 +1,235 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khử Ứng Suất Dư bằng VSR: Thay Thế Lò Ủ Kích Thước Lớn | VSR Việt Nam</title>
+  <meta name="description" content="Tìm hiểu cách công nghệ Vibratory Stress Relief (VSR) thay thế lò ủ kích thước lớn, khử ứng suất dư hiệu quả, tiết kiệm chi phí và thân thiện với môi trường.">
+  <meta name="keywords" content="khử ứng suất dư, Vibratory Stress Relief, VSR Việt Nam, lò ủ kích thước lớn, lò ram kích thước lớn, ủ nhiệt, cân bằng động, công nghệ cơ khí">
+  <meta name="author" content="VSR Việt Nam">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Khử Ứng Suất Dư bằng VSR: Thay Thế Lò Ủ Kích Thước Lớn",
+    "description": "Tìm hiểu cách công nghệ Vibratory Stress Relief (VSR) thay thế lò ủ kích thước lớn, khử ứng suất dư hiệu quả, tiết kiệm chi phí và thân thiện với môi trường.",
+    "author": {
+      "@type": "Organization",
+      "name": "VSR Việt Nam",
+      "url": "https://olegcuong.github.io/vsr-service-website/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "VSR Việt Nam",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://olegcuong.github.io/vsr-service-website/assets/images/logo.png"
+      }
+    },
+    "datePublished": "2025-05-30",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://olegcuong.github.io/vsr-service-website/blog/vsr-thay-the-u-nhiet"
+    },
+    "keywords": ["khử ứng suất dư", "Vibratory Stress Relief", "VSR Việt Nam", "lò ủ kích thước lớn", "ủ nhiệt"]
+  }
+  </script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Navigation -->
+  <nav class="bg-blue-800 text-white p-4 sticky top-0 shadow-md z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">VSR Việt Nam</h1>
+      <div class="flex items-center space-x-6">
+        <ul class="flex space-x-6">
+          <li><a href="../index.html#home" data-lang-key="nav_home" title="Trang chủ VSR Việt Nam" class="hover:text-blue-300">Trang chủ</a></li>
+          <li><a href="../index.html#about" data-lang-key="nav_about" title="Giới thiệu về công nghệ VSR" class="hover:text-blue-300">Giới thiệu</a></li>
+          <li><a href="../index.html#services" data-lang-key="nav_services" title="Dịch vụ khoa học công nghệ VSR Việt Nam" class="hover:text-blue-300">Dịch vụ</a></li>
+          <li><a href="../index.html#blog" data-lang-key="nav_blog" title="Blog và video về công nghệ VSR" class="hover:text-blue-300">Blog</a></li>
+          <li><a href="../index.html#contact" data-lang-key="nav_contact" title="Liên hệ VSR Việt Nam" class="hover:text-blue-300">Liên hệ</a></li>
+        </ul>
+        <button id="lang-toggle" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-400">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Content -->
+  <section class="py-16">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold text-center mb-6">Khử Ứng Suất Dư bằng VSR: Thay Thế Lò Ủ Kích Thước Lớn</h1>
+      <p class="text-gray-500 text-center mb-8">Ngày đăng: 30/05/2025 | Tác giả: VSR Việt Nam</p>
+      <img src="../assets/images/vsr-image3.jpg" alt="Khử ứng suất dư bằng công nghệ Vibratory Stress Relief thay thế lò ủ kích thước lớn" class="mt-6 mx-auto rounded-lg shadow-lg max-w-2xl mb-8">
+
+      <div class="prose max-w-3xl mx-auto text-gray-700">
+        <h2>Giới thiệu về công nghệ Vibratory Stress Relief (VSR)</h2>
+        <p>Công nghệ <strong>khử ứng suất dư</strong> bằng <strong>Vibratory Stress Relief (VSR)</strong> là một giải pháp tiên tiến giúp giảm và phân bố lại ứng suất dư trong các cấu kiện kim loại sau quá trình gia công, hàn, hoặc đúc. Không giống như phương pháp <strong>ủ nhiệt</strong> truyền thống sử dụng <strong>lò ủ kích thước lớn</strong> hoặc <strong>lò ram kích thước lớn</strong>, VSR sử dụng rung động cơ học có kiểm soát, mang lại hiệu quả cao, tiết kiệm chi phí, và thân thiện với môi trường.</p>
+
+        <h2>Tại sao cần khử ứng suất dư?</h2>
+        <p>Ứng suất dư là các lực nội tại trong vật liệu kim loại, hình thành trong quá trình hàn, đúc, hoặc gia công. Nếu không được xử lý, ứng suất dư có thể gây ra:</p>
+        <ul>
+          <li><strong>Biến dạng chi tiết</strong>: Làm thay đổi hình dáng, kích thước, ảnh hưởng đến độ chính xác gia công.</li>
+          <li><strong>Nứt gãy</strong>: Giảm độ bền và tuổi thọ của sản phẩm.</li>
+          <li><strong>Hiệu suất kém</strong>: Ảnh hưởng đến chất lượng sản phẩm và tăng chi phí bảo trì.</li>
+        </ul>
+        <p>Công nghệ <strong>VSR</strong> của <strong>VSR Việt Nam</strong> giúp giải quyết các vấn đề này một cách hiệu quả, đặc biệt phù hợp cho các cấu kiện kim loại lớn trong ngành cơ khí.</p>
+
+        <h2>VSR so với lò ủ kích thước lớn: Lợi ích vượt trội</h2>
+        <p>Phương pháp ủ nhiệt truyền thống sử dụng lò ủ hoặc lò ram kích thước lớn thường tốn kém, tiêu tốn nhiều năng lượng và thời gian. Ngược lại, công nghệ <strong>Vibratory Stress Relief</strong> mang lại những ưu điểm vượt trội:</p>
+        <ul>
+          <li><strong>Tiết kiệm chi phí</strong>: Không cần đầu tư vào lò ủ lớn hoặc chi phí vận hành cao.</li>
+          <li><strong>Thân thiện môi trường</strong>: Giảm lượng khí thải và tiêu thụ năng lượng so với ủ nhiệt.</li>
+          <li><strong>Thời gian xử lý nhanh</strong>: Quy trình VSR chỉ mất vài giờ, thay vì nhiều ngày như ủ nhiệt.</li>
+          <li><strong>Linh hoạt</strong>: Có thể thực hiện tại chỗ, không cần vận chuyển cấu kiện đến lò ủ.</li>
+        </ul>
+        <p>Với những lợi ích này, VSR đang dần trở thành giải pháp thay thế lý tưởng cho các doanh nghiệp cơ khí tại Việt Nam.</p>
+
+        <h2>Ứng dụng của VSR trong sản xuất</h2>
+        <p>Công nghệ <strong>VSR</strong> được ứng dụng rộng rãi trong nhiều lĩnh vực, bao gồm:</p>
+        <ul>
+          <li><strong>Cơ khí chế tạo</strong>: Khử ứng suất dư cho các cấu kiện hàn lớn như khung máy, bồn chứa.</li>
+          <li><strong>Đóng tàu</strong>: Ổn định cấu trúc tàu, giảm nguy cơ biến dạng.</li>
+          <li><strong>Công nghiệp năng lượng</strong>: Tăng độ bền cho các chi tiết turbine, rotor.</li>
+          <li><strong>Xây dựng</strong>: Xử lý ứng suất dư trong các kết cấu thép lớn.</li>
+        </ul>
+        <p>Tại <strong>VSR Việt Nam</strong>, chúng tôi cung cấp dịch vụ <strong>khử ứng suất dư</strong> chuyên nghiệp, sử dụng thiết bị hiện đại và đội ngũ kỹ sư giàu kinh nghiệm.</p>
+
+        <h2>Quy trình khử ứng suất dư bằng VSR</h2>
+        <p>Quy trình VSR tại VSR Việt Nam bao gồm các bước sau:</p>
+        <ol>
+          <li><strong>Phân tích cấu kiện</strong>: Đánh giá ứng suất dư và xác định tần số rung động phù hợp.</li>
+          <li><strong>Thiết lập thiết bị</strong>: Gắn thiết bị rung VSR lên cấu kiện kim loại.</li>
+          <li><strong>Thực hiện rung động</strong>: Tạo rung động cơ học có kiểm soát để phân bố lại ứng suất.</li>
+          <li><strong>Kiểm tra kết quả</strong>: Đảm bảo ứng suất dư được giảm tối đa, chi tiết đạt độ ổn định.</li>
+        </ol>
+        <p>Quy trình này được thực hiện nhanh chóng, an toàn và không gây ảnh hưởng đến cấu trúc vật liệu.</p>
+
+        <h2>Tại sao chọn VSR Việt Nam?</h2>
+        <p><strong>VSR Việt Nam</strong> là đơn vị tiên phong trong lĩnh vực <strong>khử ứng suất dư</strong> và các giải pháp cơ khí tại Việt Nam. Chúng tôi cam kết:</p>
+        <ul>
+          <li><strong>Công nghệ tiên tiến</strong>: Sử dụng thiết bị VSR hiện đại, đạt tiêu chuẩn quốc tế.</li>
+          <li><strong>Đội ngũ chuyên gia</strong>: Kỹ sư được đào tạo chuyên sâu về công nghệ VSR và cơ khí.</li>
+          <li><strong>Dịch vụ toàn diện</strong>: Ngoài VSR, chúng tôi cung cấp <strong>cân bằng động</strong>, <strong>thử nghiệm rung xóc</strong>, <strong>mô phỏng số</strong>, và <strong>phân tích modal</strong>.</li>
+          <li><strong>Hỗ trợ tận tâm</strong>: Tư vấn và thực hiện dịch vụ tại chỗ, tối ưu hóa chi phí và thời gian cho khách hàng.</li>
+        </ul>
+
+        <h2>Liên hệ ngay với VSR Việt Nam</h2>
+        <p>Bạn đang tìm kiếm giải pháp <strong>khử ứng suất dư</strong> hiệu quả, thay thế <strong>lò ủ kích thước lớn</strong>? Hãy liên hệ với <strong>VSR Việt Nam</strong> để được tư vấn và trải nghiệm công nghệ <strong>Vibratory Stress Relief</strong> tiên tiến.</p>
+        <p>
+          <strong>Điện thoại/Zalo</strong>: +84972924526<br>
+          <strong>Email</strong>: Gửi tin nhắn qua <a href="../index.html#contact" class="text-blue-600 hover:underline">biểu mẫu liên hệ</a><br>
+          <strong>Địa chỉ</strong>: 236 Hoàng Quốc Việt, Hà Nội
+        </p>
+        <p><a href="../index.html#contact" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-400">Liên hệ ngay</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6">
+    <div class="container mx-auto text-center">
+      <p data-lang-key="footer_copyright" class="mb-4">© 2025 VSR Việt Nam. Đã đăng ký bản quyền.</p>
+      <div class="flex justify-center space-x-4">
+        <a href="https://www.facebook.com/share/zGrwmdfXi5GsM6C3/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Facebook của VSR Việt Nam">
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a href="https://www.researchgate.net/profile/Cuong-Le-21" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="ResearchGate của VSR Việt Nam">
+          <i class="fas fa-user text-xl"></i>
+        </a>
+        <a href="https://scholar.google.com.vn/citations?hl=vi&user=2fG3gacAAAAJ" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Google Scholar của VSR Việt Nam">
+          <i class="fas fa-graduation-cap text-xl"></i>
+        </a>
+        <a href="https://lqt.edu.vn/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-blue-300" aria-label="Thông tin trên website Đại học Lê Quy Đôn">
+          <i class="fas fa-university text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Language Toggle Script -->
+  <script>
+    const translations = {
+      vi: {
+        nav_home: "Trang chủ",
+        nav_about: "Giới thiệu",
+        nav_services: "Dịch vụ",
+        nav_blog: "Blog",
+        nav_contact: "Liên hệ",
+        footer_copyright: "© 2025 VSR Việt Nam. Đã đăng ký bản quyền."
+      },
+      en: {
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_blog: "Blog",
+        nav_contact: "Contact",
+        footer_copyright: "© 2025 VSR Vietnam. All rights reserved."
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const langToggle = document.getElementById('lang-toggle');
+      let currentLang = 'vi';
+
+      const updateContent = (lang) => {
+        document.querySelectorAll('[data-lang-key]').forEach(element => {
+          const key = element.getAttribute('data-lang-key');
+          if (translations[lang][key]) {
+            element.textContent = translations[lang][key];
+          }
+        });
+        document.documentElement.lang = lang;
+        langToggle.textContent = lang === 'vi' ? 'EN' : 'VI';
+      };
+
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'vi' ? 'en' : 'vi';
+        updateContent(currentLang);
+      });
+
+      updateContent('vi');
+    });
+  </script>
+</body>
+</html>
